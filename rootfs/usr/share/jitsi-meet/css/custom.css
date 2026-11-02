@@ -1,0 +1,22 @@
+/* Jans Jitsi - Custom Styling */
+
+/* Dunkler Blaugrau-Farbverlauf statt Erdbild */
+.welcome,
+.welcome-page,
+.header,
+.header-container,
+.welcome-page-header,
+.header-text {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+    background-image: none !important;
+}
+
+/* App Store Kasten (MOBILE_APP_PROMO) und Download-Banner ausblenden */
+.mobile-browser,
+.welcome-card--dark,
+.welcome-footer,
+div[class*="MobileAppPromo"],
+div[class*="mobile-browser"],
+div[class*="download-apps"] {
+    display: none !important;
+}

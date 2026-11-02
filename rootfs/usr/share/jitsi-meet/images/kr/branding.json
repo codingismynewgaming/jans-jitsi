@@ -1,0 +1,16 @@
+{
+  "customTheme": {
+    "palette": {
+      "background": {
+        "default": "#0f172a",
+        "paper": "#1e293b"
+      },
+      "primary": {
+        "main": "#0284c7"
+      }
+    }
+  },
+  "backgroundImageUrl": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+  "premeetingBackground": "#0f172a",
+  "logoImageUrl": "/images/kr/watermark.svg?v=2"
+}
