@@ -39,4 +39,4 @@ jobs:
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:1.0
           build-args: |
-            BASE_IMAGE=jitsi/web:stable-9442
+            BASE_IMAGE=jitsi/web:stable

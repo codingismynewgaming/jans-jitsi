@@ -1,6 +1,6 @@
 # Minimales Dockerfile für "Jans Jitsi"
 # Baut auf dem aktuellen stabilen Jitsi Web Image auf (1.0.9442)
-ARG BASE_IMAGE=jitsi/web:stable-9442
+ARG BASE_IMAGE=jitsi/web:stable
 FROM ${BASE_IMAGE}
 
 # Selektive Konfigurations-Overrides
