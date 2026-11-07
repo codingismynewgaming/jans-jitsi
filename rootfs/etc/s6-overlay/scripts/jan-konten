@@ -1,0 +1,18 @@
+#!/command/with-contenv bash
+# Legt die Konten aus JITSI_KONTEN an ("name:ENV_VARIABLE,name2:ENV_VARIABLE2").
+# Passwörter kommen nur aus Umgebungsvariablen und werden nie ausgegeben.
+CFG=/run/prosody/config/prosody.cfg.lua
+DOM="${XMPP_DOMAIN:-meet.jitsi}"
+IFS=',' read -ra PAARE <<< "${JITSI_KONTEN:-}"
+for p in "${PAARE[@]}"; do
+  name="${p%%:*}"; var="${p#*:}"; pw="${!var:-}"
+  [ -z "$name" ] || [ -z "$pw" ] && { echo "[jan-konten] $name ohne Passwort, übersprungen"; continue; }
+  if prosodyctl --config "$CFG" shell user exists "$name@$DOM" 2>/dev/null | grep -q true; then
+    prosodyctl --config "$CFG" shell user password "$name@$DOM" "$pw" >/dev/null 2>&1
+  else
+    prosodyctl --config "$CFG" register "$name" "$DOM" "$pw" >/dev/null 2>&1 || \
+      prosodyctl --config "$CFG" shell user create "$name@$DOM" "$pw" >/dev/null 2>&1
+  fi
+  echo "[jan-konten] Konto $name bereit"
+done
+exit 0

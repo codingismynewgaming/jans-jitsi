@@ -10,7 +10,7 @@
       }
     }
   },
-  "backgroundImageUrl": "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+  "backgroundImageUrl": "/images/kr/hintergrund.jpg?v=3",
   "premeetingBackground": "#0f172a",
-  "logoImageUrl": "/images/kr/watermark.svg?v=2"
+  "logoImageUrl": "/images/kr/watermark.png?v=3"
 }

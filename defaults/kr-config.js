@@ -19,11 +19,11 @@ config.prejoinConfig.enabled = true;
 config.startAudioMuted = 5;
 config.startVideoMuted = 5;
 
-// Auflösung auf 720p begrenzen
-config.resolution = 720;
+// Standard 360p, damit Rechenzeit und Datenvolumen klein bleiben
+config.resolution = 360;
 config.constraints = config.constraints || {};
 config.constraints.video = Object.assign({}, config.constraints.video, {
-    height: { ideal: 720, max: 720, min: 240 }
+    height: { ideal: 360, max: 720, min: 180 }
 });
 
 // Bevorzugter Codec VP8
@@ -33,7 +33,7 @@ config.preferredCodec = 'VP8';
 config.p2p = config.p2p || {};
 config.p2p.enabled = true;
 
-// Wartezimmer (Lobby)
+// Wartezimmer (Lobby) nur bei Bedarf, Moderator schaltet es im Call ein
 config.lobby = config.lobby || {};
 config.lobby.autoKnock = true;
 config.lobby.enableChat = true;
@@ -50,3 +50,6 @@ config.disableThirdPartyRequests = true;
 
 // Dynamic Branding
 config.dynamicBrandingUrl = '/images/kr/branding.json?v=2';
+
+// Eigenes Branding
+config.dynamicBrandingUrl = '/images/kr/branding.json?v=3';

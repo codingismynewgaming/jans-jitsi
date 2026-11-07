@@ -3,8 +3,8 @@ if (typeof interfaceConfig === 'undefined') {
     var interfaceConfig = {};
 }
 
-interfaceConfig.APP_NAME = 'Jans Jitsi';
-interfaceConfig.NATIVE_APP_NAME = 'Jans Jitsi';
+interfaceConfig.APP_NAME = "Jan's Jitsi";
+interfaceConfig.NATIVE_APP_NAME = "Jan's Jitsi";
 interfaceConfig.PROVIDER_NAME = 'Jan Kühn';
 
 interfaceConfig.DEFAULT_LOCAL_DISPLAY_NAME = 'ich';

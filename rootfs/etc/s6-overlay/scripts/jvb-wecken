@@ -1,0 +1,11 @@
+#!/command/with-contenv bash
+# Solange meet läuft, bekommt die Videobrücke jede Minute ein UDP Paket.
+# Dadurch wacht sie mit meet auf und schläft nach meet wieder ein.
+if [ -z "${JVB_WECK_HOST:-}" ]; then exec sleep infinity; fi
+PORT="${JVB_WECK_PORT:-10000}"
+while true; do
+  for h in ${JVB_WECK_HOST//,/ }; do
+    echo -n wecken | nc -u -w1 "$h" "$PORT" >/dev/null 2>&1 || true
+  done
+  sleep "${JVB_WECK_INTERVALL:-60}"
+done
