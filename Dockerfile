@@ -1,9 +1,9 @@
 # Jan's Jitsi: kombinierter Dienst "meet" (Weboberfläche, Prosody, Jicofo)
 # Die Videobrücke (jvb) läuft als eigener Dienst aus dem offiziellen Image.
 ARG JITSI_TAG=stable-11248-3
-FROM docker.io/jitsi/prosody:${JITSI_TAG} AS prosody
-FROM docker.io/jitsi/jicofo:${JITSI_TAG} AS jicofo
-FROM docker.io/jitsi/web:${JITSI_TAG}
+FROM ghcr.io/jitsi/prosody:${JITSI_TAG} AS prosody
+FROM ghcr.io/jitsi/jicofo:${JITSI_TAG} AS jicofo
+FROM ghcr.io/jitsi/web:${JITSI_TAG}
 
 USER root
 
